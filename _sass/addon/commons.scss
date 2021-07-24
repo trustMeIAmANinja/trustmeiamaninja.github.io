@@ -1,8 +1,7 @@
 /*
   The common styles
 */
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&family=Dosis&display=swap');
 @mixin mode-toggle($dark-mode: false) {
   @if $dark-mode {
     @include dark-scheme;
@@ -50,7 +49,7 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+  font-family: 'Andika New Basic', 'Microsoft Yahei', sans-serif;
 }
 
 /* --- Typography --- */
@@ -58,7 +57,7 @@ body {
 h1 {
   @extend %heading;
 
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -66,7 +65,7 @@ h2 {
   @extend %section;
   @extend %anchor;
 
-  font-size: 1.4rem;
+  font-size: 2.1rem;
 }
 
 h3 {
@@ -74,7 +73,7 @@ h3 {
   @extend %section;
   @extend %anchor;
 
-  font-size: 1.25rem;
+  font-size: 1.8rem;
 }
 
 h4 {
@@ -82,7 +81,7 @@ h4 {
   @extend %section;
   @extend %anchor;
 
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 h5 {
@@ -156,6 +155,9 @@ footer {
   }
 }
 
+#toc li > a {
+  font-size: 0.85rem;
+}
 /* --- Panels --- */
 
 .access {
@@ -183,7 +185,7 @@ footer {
     @include panel-label;
   }
   .post-content {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -357,7 +359,7 @@ footer {
 }
 
 .post-content {
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 2rem;
   overflow-wrap: break-word;
@@ -660,6 +662,7 @@ $sidebar-display: "sidebar-display";
 
   .site-title {
     a {
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
       font-weight: 900;
       font-size: 1.5rem;
       letter-spacing: 0.5px;
@@ -678,7 +681,7 @@ $sidebar-display: "sidebar-display";
 
   .nav-link {
     border-radius: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
     display: table-cell;
@@ -1432,7 +1435,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .post-content {
-    font-size: 1.03rem;
+    font-size: 1.1rem;
   }
 
   footer > div.d-felx {
@@ -1562,7 +1565,8 @@ $sidebar-display: "sidebar-display";
 
         .nav-link {
           > span {
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+	    text-shadow: 0 1px 3px rgba(0,0,0,0.9)
           }
 
           > i {
