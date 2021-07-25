@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en-US" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="Deploying IHateMoney" /><meta property="og:locale" content="en_US" /><meta name="description" content="IHateMoney is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills. Its very to easy to deploy in a self-hosting setup and share with friends and family." /><meta property="og:description" content="IHateMoney is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills. Its very to easy to deploy in a self-hosting setup and share with friends and family." /><link rel="canonical" href="https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/" /><meta property="og:url" content="https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/" /><meta property="og:site_name" content="Host It!" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-07-20T01:00:00-07:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Deploying IHateMoney" /> <script type="application/ld+json"> {"description":"IHateMoney is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills. Its very to easy to deploy in a self-hosting setup and share with friends and family.","url":"https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/","headline":"Deploying IHateMoney","dateModified":"2021-07-20T01:00:00-07:00","datePublished":"2021-07-20T01:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/"},"@type":"BlogPosting","@context":"https://schema.org"}</script><title>Deploying IHateMoney | Host It!</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Host It!"><meta name="application-name" content="Host It!"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"><link rel="preconnect" href="https://metrics.wreckr.net"> <script async defer data-domain="trustmeiamaninja.github.io" src="https://metrics.wreckr.net/js/pbl.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.15/dist/bootstrap-native-v4.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/avatar.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Host It!</a></div><div class="site-subtitle font-italic">My adventures in self-hosting</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/trustmeiamaninja" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Deploying IHateMoney</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Deploying IHateMoney</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> TrustMeIAmANinja </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Tue, Jul 20, 2021, 1:00 AM -0700" prep="on" > Jul 20 <i class="unloaded">2021-07-20T01:00:00-07:00</i> </span></div><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="502 words">2 min</span></div></div><div class="post-content"><p>IHateMoney is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills. Its very to easy to deploy in a self-hosting setup and share with friends and family.</p><h3 id="build-the-docker-image">Build the docker image</h3><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c">### Create a working directory for the app.</span>
+<span class="nv">$ </span><span class="nb">mkdir</span> ~/ihatemoney
+<span class="nv">$ </span><span class="nb">cd</span> ~/ihatemoney
+<span class="nv">$ </span>git clone https://github.com/spiral-project/ihatemoney src
+<span class="nv">$ </span><span class="nb">cd </span>src
+<span class="c">### sudo might be required depending on the context</span>
+<span class="nv">$ </span>podman build <span class="nt">-t</span> github.com/spiral-project/ihatemoney <span class="nt">--format</span> docker <span class="nb">.</span>
+<span class="c"># OR</span>
+<span class="nv">$ </span>docker build <span class="nt">-t</span> github.com/spiral-project/ihatemoney <span class="nb">.</span>
+</pre></table></code></div></div><h3 id="generate-hashed-admin-password">Generate Hashed Admin Password</h3><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c">### Generate a random string and save it.</span>
+<span class="nv">$ </span>openssl rand <span class="nt">-base64</span> 15
+<span class="nv">$ </span><span class="nb">sudo </span>podman run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">--entrypoint</span> /usr/local/bin/ihatemoney <span class="se">\</span>
+    github.com/spiral-project/ihatemoney:latest generate_password_hash
+<span class="c">### When prompted for a password enter the string generated above</span>
+<span class="c">### Save the hashed admin password response from the command</span>
+</pre></table></code></div></div><h3 id="create-env-file">Create .env file</h3><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/ihatemoney
+<span class="c">### Generate a pair of secrets </span>
+<span class="nv">$ </span>vim podman.env
+</pre></table></code></div></div><p><code class="language-plaintext highlighter-rouge">podman.env</code></p><div class="language-ini highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c"># openssl rand -base64 15
+</span><span class="py">SECRET_KEY</span><span class="p">=</span><span class="s">generated_password</span>
+<span class="c"># Configure the MAIL* environment variables for your SMTP Relay
+</span><span class="py">MAIL_SERVER</span><span class="p">=</span><span class="s">smtp.gmail.com</span>
+<span class="py">MAIL_DEFAULT_SENDER</span><span class="p">=</span><span class="s">default-sender@mydomain.com</span>
+<span class="py">MAIL_PORT</span><span class="p">=</span><span class="s">587</span>
+<span class="py">MAIL_USERNAME</span><span class="p">=</span><span class="s">smtp_user</span>
+<span class="py">MAIL_PASSWORD</span><span class="p">=</span><span class="s">smtp_password</span>
+<span class="py">MAIL_USE_TLS</span><span class="p">=</span><span class="s">"True"</span>
+
+<span class="py">ACTIVATE_DEMO_PROJECT</span><span class="p">=</span><span class="s">"False"</span>
+<span class="py">ALLOW_PUBLIC_PROJECT_CREATION</span><span class="p">=</span><span class="s">"True"</span>
+<span class="c"># Pasted the hashed admin password generated in the previous step
+</span><span class="py">ADMIN_PASSWORD</span><span class="p">=</span><span class="s">generated_password</span>
+<span class="py">ACTIVATE_ADMIN_DASHBOARD</span><span class="p">=</span><span class="s">"True"</span>
+<span class="c"># Valid Timzones can be found in /usr/share/zoneinfo
+</span><span class="py">BABEL_DEFAULT_TIMEZONE</span><span class="p">=</span><span class="s">"America/Los_Angeles"</span>
+</pre></table></code></div></div><h3 id="test-the-container">Test the container</h3><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/ihatemoney
+<span class="nv">$ </span><span class="nb">touch </span>ihatemoney.db
+<span class="nv">$ </span><span class="nb">sudo </span>podman run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 8000:8000 <span class="se">\</span>
+       <span class="nt">-v</span> ./ihatemoney.db:/database/ihatemoney.db <span class="se">\</span>
+       <span class="nt">--env-file</span> ./podman.env github.com/spiral-project/ihatemoney:latest
+</pre></table></code></div></div><p>If everything worked then the app can be accessed on http://&lt;host-ip&gt;:8000.</p><h3 id="create-docker-compose-file">Create docker-compose file</h3><p>Still in the same working directory, add this <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file.</p><p><code class="language-plaintext highlighter-rouge">docker-compose.yml</code></p><div class="language-yaml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.3"</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">ihatemoney</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">github.com/spiral-project/ihatemoney:latest</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">ihatemoney</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">./ihatemoney.db:/database/ihatemoney.db</span>
+    <span class="na">env_file</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">podman.env</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">net-caddy</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">net-caddy</span><span class="pi">:</span>
+    <span class="na">external</span><span class="pi">:</span> <span class="no">true</span>
+</pre></table></code></div></div><p>The network <code class="language-plaintext highlighter-rouge">net-caddy</code> is a container network that I use to keep all containers that have a UI that I want to access via a reverse proxy. Replace <code class="language-plaintext highlighter-rouge">net-caddy</code> in the file to point to the right network for your setup.</p><h3 id="start-the-service">Start the service</h3><p>Bring up the container.</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+</pre></table></code></div></div><h3 id="setup-reverse-proxy">Setup Reverse-proxy</h3><p>I want the external subdomain <code class="language-plaintext highlighter-rouge">expenses.mydomain.com</code> to point to the app. First update DNS records for <code class="language-plaintext highlighter-rouge">mydomain.com</code> to point the <code class="language-plaintext highlighter-rouge">expenses</code> subdomain to the server’s IP hosting the app. If you are self-hosting in a home network, you would point the subdomain to the public IP assigned by your ISP to your home connection.</p><p>I already have Caddy running in a docker container to reverse proxy other services. Add this to the Caddyfile</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>expenses.mydomain.com {
+  log {
+    level INFO
+    output file /data/expenses.access.log {
+      roll_size 10MB
+      roll_keep 10
+    }
+    format single_field common_log
+  }
+
+  tls {$EMAIL}
+  encode gzip
+  reverse_proxy ihatemoney:8000
+}
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/self-hosted/'>self-hosted</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Deploying IHateMoney - Host It!&url=https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Deploying IHateMoney - Host It!&u=https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Deploying IHateMoney - Host It!&url=https://trustmeiamaninja.github.io/posts/deploying-ihatemoney/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/deploying-sish/"><div class="card-body"> <span class="timeago small" > Jul 23 <i class="unloaded">2021-07-23T01:00:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Deploying Sish</h3><div class="text-muted small"><p> Sish is a great ngrok alternative to expose any locally hosted app over the web. With Sish you create temporary secure tunnels to locally hosted applications and allow others to intereact with the ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <span class="btn btn-outline-primary disabled" prompt="Older"><p>-</p></span> <a href="/posts/deploying-sish/" class="btn btn-outline-primary" prompt="Newer"><p>Deploying Sish</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://github.com/trustmeiamaninja">TrustMeIAmANinja</a>.</p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://trustmeiamaninja.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>

@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://trustmeiamaninja.github.io/sitemap.xml
